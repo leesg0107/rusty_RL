@@ -1,0 +1,16 @@
+// 드론 제어 시스템
+pub fn control_drone(
+    mut query: Query<(&mut ExternalForce, &Transform, &mut DroneAgent)>,
+    time: Res<Time>,
+) {
+    for (mut ext_force, transform, mut agent) in query.iter_mut() {
+        // 현재 상태 업데이트
+        agent.position = transform.translation;
+        agent.rotation = transform.rotation;
+        
+        // 제어 입력에 따라 힘과 토크 적용
+        let up_direction = transform.rotation * Vec3::Y;
+        ext_force.force = up_direction * agent.thrust * 9.8; // 중력 상쇄 + 추가 추력
+        ext_force.torque = agent.torque; // ExternalForce에 torque 필드가 있음
+    }
+} 

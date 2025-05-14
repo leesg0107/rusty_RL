@@ -1,0 +1,27 @@
+[package]
+name = "rusty_RL"  # 프로젝트 이름에 맞게 수정하세요
+version = "0.1.0"
+edition = "2021"  # 안정화된 2021 에디션 사용
+default-run = "rusty_RL"
+
+[[bin]]
+name = "rusty_RL"
+path = "src/main.rs"
+
+[[bin]]
+name = "test_tch"
+path = "src/test_tch.rs"
+
+[[bin]]
+name = "simple_rl"
+path = "src/simple_rl.rs"
+
+[dependencies]
+# 정확한 버전 지정
+bevy = "0.12"  # 버전은 현재 사용 중인 버전과 일치해야 합니다
+bevy_rapier3d = "0.23.0"
+bevy_egui = "0.23"         # egui UI 라이브러리
+ndarray = "0.15.6"        # 수치 계산용
+rand = "0.8.5"            # 랜덤 값 생성 
+tch = { version = "0.13.0", features = ["download-libtorch"] }  # Using download-libtorch feature
+urdf-rs = "0.7.0"

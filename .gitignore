@@ -1,0 +1,51 @@
+# Rust 컴파일 결과물
+/target/
+**/*.rs.bk
+*.pdb
+
+# Cargo.lock (라이브러리의 경우 무시, 실행 파일의 경우 포함)
+# Cargo.lock
+
+# IDE 관련
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+.DS_Store
+
+# 강화학습 모델 및 체크포인트
+/models/*.pt
+/models/*.pth
+/models/*.onnx
+/models/checkpoints/
+
+# 로그 파일
+/logs/
+*.log
+
+# 학습 데이터
+/data/
+*.csv
+*.json
+
+# PyTorch 관련 (tch-rs 사용시)
+libtorch/
+
+# 임시 파일
+.tmp/
+*.tmp
+
+# 바이너리/실행 파일
+*.exe
+*.dll
+*.so
+*.dylib
+
+# 백업 파일
+*~
+*.bak
+
+# 사용자 특정 환경 설정
+.env
+.env.local 
